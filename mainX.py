@@ -1,7 +1,7 @@
 # pylint: disable=unnecessary-dunder-call, invalid-name, line-too-long, trailing-whitespace, missing-final-newline
 import sys
 from decimal import Decimal, InvalidOperation
-from calculator import Calculator
+from ZZ_calculator import Calculator
 
 def run_calculations(a:Decimal, b:Decimal, operation_name:str):
     # uses functions imported from calc.operations to randomly generate one of the ops

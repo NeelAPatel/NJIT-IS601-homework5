@@ -1,7 +1,7 @@
 from decimal import Decimal
 from typing import Callable, List
 
-from calculator.calculation import Calculation
+from ZZ_calculator.calculation import Calculation
 
 class Calculations: 
     #Stores all 'Calculation's performed

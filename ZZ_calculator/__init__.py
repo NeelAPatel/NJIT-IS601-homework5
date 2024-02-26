@@ -1,7 +1,7 @@
 from typing import Callable
-from calculator.calculation import Calculation
-from calculator.calculations import Calculations
-from calculator.operations import add, subtract, multiply, divide
+from ZZ_calculator.calculation import Calculation
+from ZZ_calculator.calculations import Calculations
+from ZZ_calculator.operations import add, subtract, multiply, divide
 from decimal import Decimal # Importing Decimal to typeforce 
 
 

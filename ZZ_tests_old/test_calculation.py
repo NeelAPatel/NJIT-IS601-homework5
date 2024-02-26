@@ -4,8 +4,8 @@
 from decimal import Decimal
 from typing import Callable
 import pytest
-from calculator.calculation import Calculation
-from calculator.operations import add, divide
+from ZZ_calculator.calculation import Calculation
+from ZZ_calculator.operations import add, divide
 
 #Turns each 'row' which is a tuple of elements into parameters
 #testing different numbers/type combos to ensure correctedness

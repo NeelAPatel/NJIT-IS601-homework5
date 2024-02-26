@@ -8,8 +8,8 @@ ensuring that addition, subtraction, multiplication, and division work correctly
 from decimal import Decimal
 
 import pytest
-from calculator.calculation import Calculation
-from calculator.operations import add, multiply, subtract, divide
+from ZZ_calculator.calculation import Calculation
+from ZZ_calculator.operations import add, multiply, subtract, divide
 
 def test_operation_addition():
     '''Test 'addition' operation itself '''

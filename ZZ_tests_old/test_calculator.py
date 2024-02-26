@@ -1,6 +1,6 @@
 # pylint: disable=unnecessary-dunder-call, invalid-name, line-too-long, trailing-whitespace, missing-final-newline
 """ This module tests at the main calculator level where users operate the program"""
-from calculator import Calculator
+from ZZ_calculator import Calculator
 
 def test_addition():
     '''Test the addition calculation'''
