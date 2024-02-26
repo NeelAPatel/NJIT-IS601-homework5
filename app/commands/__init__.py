@@ -26,6 +26,9 @@ class CommandHandler:
 
     
     def execute_command(self, command_line):
+        '''Executes command while safely handling parameters where needed'''
+
+        # tests if entry string is splittable. Splittable = Something was entered
         try:
             parts = command_line.split()
             command_name = parts[0]
@@ -33,10 +36,17 @@ class CommandHandler:
             print("No command entered.")
             return
         
+        # SOMETHING was entered, might not be a command
         command = self.commands.get(command_name)
         
-        if command:
+
+
+        if command: # if command is not null
+
+            #get arguments if exists
             args = parts[1:]
+
+            # Execute command with args as potential parameter
             try:
                 result = command.execute(*args)
                 print(result)
