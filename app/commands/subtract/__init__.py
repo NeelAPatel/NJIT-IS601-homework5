@@ -14,6 +14,6 @@ class SubtractCommand(Command):
         try:
             a = Decimal(args[0])
             b = Decimal(args[1])
-            return a + b
+            return a - b
         except InvalidOperation:
             return "Invalid input. Please enter two decimal numbers."

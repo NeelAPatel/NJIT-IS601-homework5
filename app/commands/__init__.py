@@ -16,15 +16,6 @@ class CommandHandler:
         Register them into self.commands Dictonary such that key = command_name and command is the value'''
         self.commands[command_name] = command
         
-
-    # def execute_command(self, command_name: str):
-    #     """Easier to ask for forgiveness than permission (EAFP) - Use when its going to most likely work"""
-    #     try:
-    #         self.commands[command_name].execute()
-    #     except KeyError:
-    #         print(f"No such command: {command_name}")
-
-    
     def execute_command(self, command_line):
         '''Executes command while safely handling parameters where needed'''
 
