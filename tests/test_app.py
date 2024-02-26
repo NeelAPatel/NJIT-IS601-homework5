@@ -11,6 +11,9 @@ def test_app_start_exit_command(capfd, monkeypatch):
     assert e.type == SystemExit
 
 
+
+import pytest
+
 def test_app_start_unknown_command(capfd, monkeypatch):
     """Test how the REPL handles an unknown command before exiting."""
     # Simulate user entering an unknown command followed by 'exit'
@@ -27,4 +30,4 @@ def test_app_start_unknown_command(capfd, monkeypatch):
     
     # Verify that the unknown command was handled as expected
     captured = capfd.readouterr()
-    assert "No such command: unknown_command" in captured.out
+    assert "Command 'unknown_command' not found." in captured.out
