@@ -3,6 +3,7 @@ from importlib import import_module
 
 from app.commands import CommandHandler
 from app.commands.add import AddCommand
+from app.commands.exit import ExitCommand
 from app.commands.hello import HelloCommand
 from app.commands.subtract import SubtractCommand
 
@@ -13,8 +14,10 @@ class App:
     def start(self):
         # Register commands here
         self.command_handler.register_command("hello", HelloCommand())
+        self.command_handler.register_command("exit", ExitCommand())
         self.command_handler.register_command("add", AddCommand())
         self.command_handler.register_command("subtract", SubtractCommand())
+        
         # self.command_handler.register_command("menu", MenuCommand())
         # self.command_handler.register_command("discord", DiscordCommand())
 
