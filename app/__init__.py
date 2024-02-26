@@ -48,4 +48,7 @@ class App:
 
         print("Type 'exit y' to exit.")
         while True:  #REPL Read, Evaluate, Print, Loop
-            self.command_handler.execute_command(input(">>> ").strip())
+            result = self.command_handler.execute_command(input(">>> ").strip()) 
+            
+            if result is not None:
+                print(result)
