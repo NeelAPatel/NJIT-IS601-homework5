@@ -20,3 +20,9 @@ def test_divide_command_with_non_decimal_input():
     divide_command = DivideCommand()
     result = divide_command.execute('abc', 'xyz')
     assert result == "Invalid input. Please enter two decimal numbers."
+
+def test_divide_command_with_zero_denominator():
+    ''' Tests for div by zero '''
+    divide_command = DivideCommand()
+    result = divide_command.execute('10', '0')
+    assert result == "Cannot divide by zero."
