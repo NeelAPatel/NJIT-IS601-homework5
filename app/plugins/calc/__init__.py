@@ -56,7 +56,7 @@ class CalcCommand(Command):
         # while (args[0] != 'exit'):
         if len(args) != 3:
             print("Usage: calc <number1> <number2> <operation>\n <operation>: 'add' 'subtract' 'multiply' 'divide' ")
-            sys.exit(1)
+            return
         
         #Set arguments
         a = args[0]

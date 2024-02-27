@@ -1,7 +1,7 @@
 '''Tests add command'''
 from decimal import Decimal
 
-from app.commands.add import AddCommand
+from app.plugins.add import AddCommand
 
 def test_add_command_with_two_decimals():
     ''' Tests for 2-number args '''

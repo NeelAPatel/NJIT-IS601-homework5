@@ -1,7 +1,7 @@
 '''Tests multiply command'''
 from decimal import Decimal
 
-from app.commands.multiply import MultiplyCommand
+from app.plugins.multiply import MultiplyCommand
 
 def test_multiply_command_with_two_decimals():
     ''' Tests for 2-number args '''

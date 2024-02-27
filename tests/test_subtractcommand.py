@@ -1,7 +1,7 @@
 '''Tests subtract command'''
 from decimal import Decimal
 
-from app.commands.subtract import SubtractCommand
+from app.plugins.subtract import SubtractCommand
 
 def test_subtract_command_with_two_decimals():
     ''' Tests for 2-number args '''

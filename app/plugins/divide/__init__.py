@@ -15,10 +15,10 @@ class DivideCommand(Command):
             a = Decimal(args[0])
             b = Decimal(args[1])
             if (b == 0): 
-                raise "Cannot divide by zero."
+                raise ZeroDivisionError("Cannot divide by zero.")
             
             return a / b
         except InvalidOperation:
             return "Invalid input. Please enter two decimal numbers."
-        except ZeroDivisionError:
+        except ZeroDivisionError as e:
             return "Cannot divide by zero."

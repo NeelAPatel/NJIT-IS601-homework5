@@ -1,7 +1,7 @@
 '''Tests divide command'''
 from decimal import Decimal
 
-from app.commands.divide import DivideCommand
+from app.plugins.divide import DivideCommand
 
 def test_divide_command_with_two_decimals():
     ''' Tests for 2-number args '''
