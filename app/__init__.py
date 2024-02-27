@@ -36,11 +36,11 @@ class App:
     def start(self):
 
 
+        self.pluginRegistration()
 
         print("Type 'exit' to exit.")
         while True:  #REPL Read, Evaluate, Print, Loop
             # register plugins
-            self.pluginRegistration()
             self.command_handler.execute_command(input(">>> ").strip())
 
     
