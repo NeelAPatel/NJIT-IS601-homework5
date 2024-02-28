@@ -3,9 +3,9 @@
 and retireval'''
 from decimal import Decimal
 import pytest
-from ZZ_calculator.calculation import Calculation
-from ZZ_calculator.calculations import Calculations
-from ZZ_calculator.operations import add, subtract, multiply, divide
+from app.plugins.calc.calculator.calculation import Calculation
+from app.plugins.calc.calculator.calculations import Calculations
+from app.plugins.calc.calculator.operations import add, subtract, multiply, divide
 
 
 # pytest.fixture marks as a 'fixture'
@@ -40,6 +40,11 @@ def test_get_latest_calc(setup_calculations):
     ''' Tests the latest calculation retrieved'''
     latest_calc =  Calculations.get_latest_calc()
     assert latest_calc.a == Decimal('20') and latest_calc.b == Decimal('5'), "Failed to retrieve correct latest calculation"
+
+def test_get_latest_with_history(setup_calculations):
+    """Test the return of latest calculation if history is empty"""
+    # No history prep
+    assert Calculations.get_history(), "Expected None for latest calculation with empty history"
 
 def test_get_latest_with_empty_history(setup_calculations):
     """Test the return of latest calculation if history is empty"""
