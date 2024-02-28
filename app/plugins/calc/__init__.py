@@ -41,7 +41,7 @@ class CalcCommand(Command):
         except InvalidOperation: # not a number
             print(f"Invalid number input: {a} or {b} is not a valid number.")
         except ZeroDivisionError: # Dividing by zero
-            print("Error: Division by zero.")
+            print("An error occurred: Cannot divide by zero.")
         except Exception as e: # Catch-all for unexpected errors
             print(f"An error occurred: {e}")
 
@@ -50,9 +50,6 @@ class CalcCommand(Command):
     def execute(self, *args): 
         # Control the input
         # 4 inputs only 
-        # print (len(args))
-        # print(args) 
-        
         # while (args[0] != 'exit'):
         if len(args) != 3:
             print("Usage: calc <number1> <number2> <operation>\n <operation>: 'add' 'subtract' 'multiply' 'divide' ")
@@ -64,12 +61,4 @@ class CalcCommand(Command):
         operation = args[2]
         
         #Take system args and run as a function
-
-        
         self.run_calculations(a, b, operation)
-
-
-        # print("Type 'exit' to exit.")
-        # while True:  #REPL Read, Evaluate, Print, Loop
-        #     # register plugins
-        #     self.command_handler.execute_command(input(">>> (calc) > ").strip())

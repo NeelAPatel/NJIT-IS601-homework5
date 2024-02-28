@@ -1,4 +1,4 @@
-import pytest
+'''This module tests the menu command with prepared plugin lists'''
 from unittest.mock import patch
 from app.plugins.menu import MenuCommand
 
