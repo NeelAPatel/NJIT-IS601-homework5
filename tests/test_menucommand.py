@@ -39,8 +39,6 @@ def test_menu_with_one_mock_plugin(capsys, tmp_path):
         expected_output = "Plugins Menu: \nmock_test_plugin\n// end of plugins list\n"
         assert captured.out == expected_output, "Output should include the 'tester' plugin in the plugins list"
 
-
-
 def test_menu_with_all_plugin_variations(capsys, tmp_path):
     '''Tests Menu with multiple plugin and variations'''
     # Create a temporary "tester" directory in the tmp_path
@@ -48,9 +46,7 @@ def test_menu_with_all_plugin_variations(capsys, tmp_path):
     (tmp_path / "__pycache__").touch()
     (tmp_path / "__init__.py").touch()
     (tmp_path / "valid_plugin").mkdir()
-
-    # Use patch to mock os.path.abspath and os.path.join to return the path to the tmp_path
-    # This simulates the plugins directory containing only the "tester" directory
+    
     with patch('os.path.abspath', return_value=str(tmp_path)), \
          patch('os.path.join', return_value=str(tmp_path)):
 

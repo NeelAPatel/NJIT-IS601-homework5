@@ -1,3 +1,4 @@
+# pylint: disable=unnecessary-dunder-call, invalid-name, line-too-long, trailing-whitespace, missing-final-newline
 '''Tests subtract command'''
 from decimal import Decimal
 
