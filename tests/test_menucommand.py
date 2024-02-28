@@ -46,7 +46,7 @@ def test_menu_with_all_plugin_variations(capsys, tmp_path):
     (tmp_path / "__pycache__").touch()
     (tmp_path / "__init__.py").touch()
     (tmp_path / "valid_plugin").mkdir()
-    
+
     with patch('os.path.abspath', return_value=str(tmp_path)), \
          patch('os.path.join', return_value=str(tmp_path)):
 

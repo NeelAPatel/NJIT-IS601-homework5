@@ -1,7 +1,7 @@
 '''Tests square root command'''
 from decimal import Decimal
 
-from app.plugins.sqrt import SqrtCommand 
+from app.plugins.sqrt import SqrtCommand
 
 def test_sqrt_command_with_decimal():
     ''' Tests for a single decimal argument '''
