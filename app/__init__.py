@@ -1,22 +1,30 @@
 import importlib
-import os
 import pkgutil
-
+import multiprocessing
+from multiprocessing import Process
 from app.commands import CommandHandler, Command
 
-class App: 
+class App:
     def __init__(self):
         self.command_handler = CommandHandler()
+        # Creating exit event to use exit command
+        self.exit_event = multiprocessing.Event()
 
+    def execute_command_in_process(self, command_input):
+        """Method to execute a command in a separate process."""
+        if command_input == "exit":
+            self.exit_event.set()
+        else:
+            self.command_handler.execute_command(command_input)
 
-    def pluginRegistration(self): 
+    def pluginRegistration(self):
         # Dynamically load all plugins in the plugins directory
         pluginPath = 'app.plugins'
         for _, plugin_name, is_pkg in pkgutil.iter_modules([pluginPath.replace('.', '/')]):
-            #For each item, item's name, and pkgFlag in path's list... 
+            #For each item, item's name, and pkgFlag in path's list...
 
             if is_pkg:  # Ensure it's a package
-                
+
                 #Grabs module aka the plugin package folder
                 plugin_module = importlib.import_module(f'{pluginPath}.{plugin_name}')
 
@@ -28,14 +36,17 @@ class App:
                             self.command_handler.register_command(plugin_name, item())
                     except TypeError:
                         continue  # Ignore if not class
-            else: 
+            else:
                 continue
 
     def start(self):
-
+        # Register plugins as usual
         self.pluginRegistration()
 
+        #Staring repel process
         print("Type 'exit' to exit.")
-        while True:  #REPL Read, Evaluate, Print, Loop
-            # register plugins
-            self.command_handler.execute_command(input(">>> ").strip())
+        while not self.exit_event.is_set():  # Check the exit event
+            command_input = input(">>> ").strip()
+            command_process = Process(target=self.execute_command_in_process, args=(command_input,))
+            command_process.start()
+            command_process.join()
